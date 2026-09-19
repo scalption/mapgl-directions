@@ -1,0 +1,786 @@
+{
+    "config": {
+        "textProvider": "md"
+    },
+    "refMap": {
+        "Evented": {
+            "type": "class",
+            "props": {
+                "name": "Evented",
+                "description": "Event emitter",
+                "inherits": [],
+                "methods": [
+                    {
+                        "name": "emit",
+                        "parameters": [
+                            {
+                                "name": "type",
+                                "types": [
+                                    {
+                                        "name": "K"
+                                    }
+                                ],
+                                "description": "Event type",
+                                "isOptional": false
+                            },
+                            {
+                                "name": "data",
+                                "types": [
+                                    {
+                                        "name": "M[K]"
+                                    }
+                                ],
+                                "description": "Data transferred to events",
+                                "isOptional": true
+                            }
+                        ],
+                        "result": {
+                            "types": [
+                                {
+                                    "name": "this"
+                                }
+                            ]
+                        },
+                        "description": "Calls all event listeners with event type \n`type`",
+                        "isConstructor": false
+                    },
+                    {
+                        "name": "off",
+                        "parameters": [
+                            {
+                                "name": "type",
+                                "types": [
+                                    {
+                                        "name": "K"
+                                    }
+                                ],
+                                "description": "Event type",
+                                "isOptional": false
+                            },
+                            {
+                                "name": "listener",
+                                "types": [
+                                    {
+                                        "name": "(ev: M[K]) => void"
+                                    }
+                                ],
+                                "description": "Event handler",
+                                "isOptional": false
+                            }
+                        ],
+                        "result": {
+                            "types": [
+                                {
+                                    "name": "this"
+                                }
+                            ]
+                        },
+                        "description": "Removes event listener registered with \n`on`",
+                        "isConstructor": false
+                    },
+                    {
+                        "name": "on",
+                        "parameters": [
+                            {
+                                "name": "type",
+                                "types": [
+                                    {
+                                        "name": "K"
+                                    }
+                                ],
+                                "description": "Event type",
+                                "isOptional": false
+                            },
+                            {
+                                "name": "listener",
+                                "types": [
+                                    {
+                                        "name": "(ev: M[K]) => void"
+                                    }
+                                ],
+                                "description": "Event handler",
+                                "isOptional": false
+                            }
+                        ],
+                        "result": {
+                            "types": [
+                                {
+                                    "name": "this"
+                                }
+                            ]
+                        },
+                        "description": "Registers event listener",
+                        "isConstructor": false
+                    },
+                    {
+                        "name": "once",
+                        "parameters": [
+                            {
+                                "name": "type",
+                                "types": [
+                                    {
+                                        "name": "K"
+                                    }
+                                ],
+                                "description": "Event type",
+                                "isOptional": false
+                            },
+                            {
+                                "name": "listener",
+                                "types": [
+                                    {
+                                        "name": "(ev: M[K]) => void"
+                                    }
+                                ],
+                                "description": "Event handler",
+                                "isOptional": false
+                            }
+                        ],
+                        "result": {
+                            "types": [
+                                {
+                                    "name": "this"
+                                }
+                            ]
+                        },
+                        "description": "Registers event listener which will be called once",
+                        "isConstructor": false
+                    }
+                ],
+                "constructorMethods": [
+                    {
+                        "isConstructor": true,
+                        "name": "constructor",
+                        "parameters": [],
+                        "result": {
+                            "types": [
+                                {
+                                    "name": "Evented<M>"
+                                }
+                            ]
+                        }
+                    }
+                ]
+            }
+        },
+        "Directions": {
+            "type": "class",
+            "props": {
+                "name": "Directions",
+                "description": "A class that provides driving direction functionality.",
+                "inherits": [
+                    {
+                        "name": "Evented<DirectionsEventTable>"
+                    }
+                ],
+                "methods": [
+                    {
+                        "name": "carRoute",
+                        "parameters": [
+                            {
+                                "name": "options",
+                                "types": [
+                                    {
+                                        "name": "CarRouteOptions",
+                                        "refLink": "/en/mapgl/plugins/directions/reference/CarRouteOptions"
+                                    }
+                                ],
+                                "isOptional": false
+                            }
+                        ],
+                        "result": {
+                            "types": [
+                                {
+                                    "name": "Promise<void>"
+                                }
+                            ]
+                        },
+                        "description": "Finds and draws an optimal car route.",
+                        "isConstructor": false
+                    },
+                    {
+                        "name": "clear",
+                        "parameters": [],
+                        "result": {
+                            "types": [
+                                {
+                                    "name": "void"
+                                }
+                            ]
+                        },
+                        "description": "Clears the map from any previously drawn routes.",
+                        "isConstructor": false
+                    },
+                    {
+                        "name": "emit",
+                        "parameters": [
+                            {
+                                "name": "type",
+                                "types": [
+                                    {
+                                        "name": "K"
+                                    }
+                                ],
+                                "description": "Event type",
+                                "isOptional": false
+                            },
+                            {
+                                "name": "data",
+                                "types": [
+                                    {
+                                        "name": "DirectionsEventTable[K]"
+                                    }
+                                ],
+                                "description": "Data transferred to events",
+                                "isOptional": true
+                            }
+                        ],
+                        "result": {
+                            "types": [
+                                {
+                                    "name": "this"
+                                }
+                            ]
+                        },
+                        "description": "Calls all event listeners with event type \n`type`",
+                        "isConstructor": false
+                    },
+                    {
+                        "name": "off",
+                        "parameters": [
+                            {
+                                "name": "type",
+                                "types": [
+                                    {
+                                        "name": "K"
+                                    }
+                                ],
+                                "description": "Event type",
+                                "isOptional": false
+                            },
+                            {
+                                "name": "listener",
+                                "types": [
+                                    {
+                                        "name": "(ev: DirectionsEventTable[K]) => void"
+                                    }
+                                ],
+                                "description": "Event handler",
+                                "isOptional": false
+                            }
+                        ],
+                        "result": {
+                            "types": [
+                                {
+                                    "name": "this"
+                                }
+                            ]
+                        },
+                        "description": "Removes event listener registered with \n`on`",
+                        "isConstructor": false
+                    },
+                    {
+                        "name": "on",
+                        "parameters": [
+                            {
+                                "name": "type",
+                                "types": [
+                                    {
+                                        "name": "K"
+                                    }
+                                ],
+                                "description": "Event type",
+                                "isOptional": false
+                            },
+                            {
+                                "name": "listener",
+                                "types": [
+                                    {
+                                        "name": "(ev: DirectionsEventTable[K]) => void"
+                                    }
+                                ],
+                                "description": "Event handler",
+                                "isOptional": false
+                            }
+                        ],
+                        "result": {
+                            "types": [
+                                {
+                                    "name": "this"
+                                }
+                            ]
+                        },
+                        "description": "Registers event listener",
+                        "isConstructor": false
+                    },
+                    {
+                        "name": "once",
+                        "parameters": [
+                            {
+                                "name": "type",
+                                "types": [
+                                    {
+                                        "name": "K"
+                                    }
+                                ],
+                                "description": "Event type",
+                                "isOptional": false
+                            },
+                            {
+                                "name": "listener",
+                                "types": [
+                                    {
+                                        "name": "(ev: DirectionsEventTable[K]) => void"
+                                    }
+                                ],
+                                "description": "Event handler",
+                                "isOptional": false
+                            }
+                        ],
+                        "result": {
+                            "types": [
+                                {
+                                    "name": "this"
+                                }
+                            ]
+                        },
+                        "description": "Registers event listener which will be called once",
+                        "isConstructor": false
+                    },
+                    {
+                        "name": "pedestrianRoute",
+                        "parameters": [
+                            {
+                                "name": "options",
+                                "types": [
+                                    {
+                                        "name": "PedestrianRouteOptions",
+                                        "refLink": "/en/mapgl/plugins/directions/reference/PedestrianRouteOptions"
+                                    }
+                                ],
+                                "isOptional": false
+                            }
+                        ],
+                        "result": {
+                            "types": [
+                                {
+                                    "name": "Promise<void>"
+                                }
+                            ]
+                        },
+                        "description": "Finds and draws an optimal pedestrian route.",
+                        "isConstructor": false
+                    }
+                ],
+                "constructorMethods": [
+                    {
+                        "isConstructor": true,
+                        "name": "constructor",
+                        "description": "Example:\n\n```js\nconst directions = new mapgl.Directions(map, {\n    directionsApiKey: 'Your Directions API access key',\n});\n\ndirections.carRoute({\n    points: [\n        [55.2772379, 25.2377810],\n        [55.2986956, 25.2576546],\n    ],\n});\n```",
+                        "parameters": [
+                            {
+                                "name": "map",
+                                "types": [
+                                    {
+                                        "name": "Map<>"
+                                    }
+                                ],
+                                "description": "The map instance.",
+                                "isOptional": false
+                            },
+                            {
+                                "name": "options",
+                                "types": [
+                                    {
+                                        "name": "DirectionsOptions",
+                                        "refLink": "/en/mapgl/plugins/directions/reference/DirectionsOptions"
+                                    }
+                                ],
+                                "description": "Directions initialization options.",
+                                "isOptional": false
+                            }
+                        ],
+                        "result": {
+                            "types": [
+                                {
+                                    "name": "Directions<>"
+                                }
+                            ]
+                        }
+                    }
+                ]
+            }
+        },
+        "RouteStyle": {
+            "type": "interface",
+            "props": {
+                "name": "RouteStyle",
+                "properties": [
+                    {
+                        "name": "haloLineWidth",
+                        "description": "Route halo width. Will be rendered under substrate",
+                        "isOptional": true,
+                        "types": [
+                            {
+                                "name": "number"
+                            },
+                            {
+                                "name": "InterpolateExpression",
+                                "refLink": "/en/mapgl/plugins/directions/reference/InterpolateExpression"
+                            }
+                        ]
+                    },
+                    {
+                        "name": "routeLineWidth",
+                        "description": "Route line width, represents route",
+                        "isOptional": true,
+                        "types": [
+                            {
+                                "name": "number"
+                            },
+                            {
+                                "name": "InterpolateExpression",
+                                "refLink": "/en/mapgl/plugins/directions/reference/InterpolateExpression"
+                            }
+                        ]
+                    },
+                    {
+                        "name": "substrateLineWidth",
+                        "description": "Route substrate width. Will be rendered under route",
+                        "isOptional": true,
+                        "types": [
+                            {
+                                "name": "number"
+                            },
+                            {
+                                "name": "InterpolateExpression",
+                                "refLink": "/en/mapgl/plugins/directions/reference/InterpolateExpression"
+                            }
+                        ]
+                    }
+                ]
+            }
+        },
+        "DirectionResult": {
+            "type": "interface",
+            "props": {
+                "name": "DirectionResult",
+                "description": "Result of search for car or pedestrian routing direction.",
+                "properties": [
+                    {
+                        "name": "algorithm",
+                        "isOptional": true,
+                        "types": [
+                            {
+                                "name": "string"
+                            }
+                        ]
+                    },
+                    {
+                        "name": "begin_pedestrian_path",
+                        "isOptional": true,
+                        "types": [
+                            {
+                                "name": "PedestrianPath"
+                            }
+                        ]
+                    },
+                    {
+                        "name": "end_pedestrian_path",
+                        "isOptional": true,
+                        "types": [
+                            {
+                                "name": "PedestrianPath"
+                            }
+                        ]
+                    },
+                    {
+                        "name": "filter_road_types",
+                        "isOptional": true,
+                        "types": [
+                            {
+                                "name": "DirectionRoadType[]"
+                            }
+                        ]
+                    },
+                    {
+                        "name": "id",
+                        "isOptional": false,
+                        "types": [
+                            {
+                                "name": "string"
+                            }
+                        ]
+                    },
+                    {
+                        "name": "maneuvers",
+                        "isOptional": true,
+                        "types": [
+                            {
+                                "name": "Maneuver[]"
+                            }
+                        ]
+                    },
+                    {
+                        "name": "requested_filters",
+                        "isOptional": true,
+                        "types": [
+                            {
+                                "name": "DirectionRoadType[]"
+                            }
+                        ]
+                    },
+                    {
+                        "name": "result_filters",
+                        "isOptional": true,
+                        "types": [
+                            {
+                                "name": "DirectionRoadType[]"
+                            }
+                        ]
+                    },
+                    {
+                        "name": "route_id",
+                        "isOptional": false,
+                        "types": [
+                            {
+                                "name": "string"
+                            }
+                        ]
+                    },
+                    {
+                        "name": "total_distance",
+                        "isOptional": false,
+                        "types": [
+                            {
+                                "name": "number"
+                            }
+                        ]
+                    },
+                    {
+                        "name": "total_duration",
+                        "isOptional": false,
+                        "types": [
+                            {
+                                "name": "number"
+                            }
+                        ]
+                    },
+                    {
+                        "name": "type",
+                        "isOptional": false,
+                        "types": [
+                            {
+                                "name": "\"carrouting\""
+                            },
+                            {
+                                "name": "\"pedestrianrouting\""
+                            }
+                        ]
+                    },
+                    {
+                        "name": "ui_total_distance",
+                        "isOptional": false,
+                        "types": [
+                            {
+                                "name": "UITotalDistance",
+                                "refLink": "/en/mapgl/plugins/directions/reference/UITotalDistance"
+                            }
+                        ]
+                    },
+                    {
+                        "name": "ui_total_duration",
+                        "isOptional": false,
+                        "types": [
+                            {
+                                "name": "string"
+                            }
+                        ]
+                    },
+                    {
+                        "name": "waypoints",
+                        "isOptional": false,
+                        "types": [
+                            {
+                                "name": "WayPoint[]"
+                            }
+                        ]
+                    }
+                ]
+            }
+        },
+        "UITotalDistance": {
+            "type": "interface",
+            "props": {
+                "name": "UITotalDistance",
+                "description": "UI total distance presentation",
+                "properties": [
+                    {
+                        "name": "unit",
+                        "isOptional": false,
+                        "types": [
+                            {
+                                "name": "string"
+                            }
+                        ]
+                    },
+                    {
+                        "name": "value",
+                        "isOptional": false,
+                        "types": [
+                            {
+                                "name": "string"
+                            }
+                        ]
+                    }
+                ]
+            }
+        },
+        "DirectionsOptions": {
+            "type": "interface",
+            "props": {
+                "name": "DirectionsOptions",
+                "description": "Directions initialization options.",
+                "properties": [
+                    {
+                        "name": "directionsApiKey",
+                        "description": "Directions API access key.",
+                        "isOptional": false,
+                        "types": [
+                            {
+                                "name": "string"
+                            }
+                        ]
+                    }
+                ]
+            }
+        },
+        "CarRouteOptions": {
+            "type": "interface",
+            "props": {
+                "name": "CarRouteOptions",
+                "description": "Car route method options.",
+                "properties": [
+                    {
+                        "name": "points",
+                        "description": "Array of geographical points [longitude, latitude].\n\nYou can set up to 10 points.",
+                        "isOptional": false,
+                        "types": [
+                            {
+                                "name": "Point[]"
+                            }
+                        ]
+                    },
+                    {
+                        "name": "style",
+                        "description": "Additional styles for route",
+                        "isOptional": true,
+                        "types": [
+                            {
+                                "name": "RouteStyle",
+                                "refLink": "/en/mapgl/plugins/directions/reference/RouteStyle"
+                            }
+                        ]
+                    }
+                ]
+            }
+        },
+        "PedestrianRouteOptions": {
+            "type": "interface",
+            "props": {
+                "name": "PedestrianRouteOptions",
+                "description": "Pedestrian route method options.",
+                "properties": [
+                    {
+                        "name": "points",
+                        "description": "Array of geographical points [longitude, latitude].\n\nYou can set up to 10 points.",
+                        "isOptional": false,
+                        "types": [
+                            {
+                                "name": "Point[]"
+                            }
+                        ]
+                    },
+                    {
+                        "name": "style",
+                        "description": "Additional styles for route",
+                        "isOptional": true,
+                        "types": [
+                            {
+                                "name": "RouteStyle",
+                                "refLink": "/en/mapgl/plugins/directions/reference/RouteStyle"
+                            }
+                        ]
+                    }
+                ]
+            }
+        },
+        "DirectionsEventTable": {
+            "type": "interface",
+            "props": {
+                "name": "DirectionsEventTable",
+                "description": "The list of events that can be emitted by a Directions instance.",
+                "properties": [
+                    {
+                        "name": "directionsLoaded",
+                        "description": "Emitted when directions is loaded.",
+                        "isOptional": false,
+                        "types": [
+                            {
+                                "name": "DirectionsLoadedEvent",
+                                "refLink": "/en/mapgl/plugins/directions/reference/DirectionsLoadedEvent"
+                            }
+                        ]
+                    }
+                ]
+            }
+        },
+        "DirectionsLoadedEvent": {
+            "type": "interface",
+            "props": {
+                "name": "DirectionsLoadedEvent",
+                "properties": [
+                    {
+                        "name": "routes",
+                        "isOptional": false,
+                        "types": [
+                            {
+                                "name": "DirectionResult[]"
+                            }
+                        ]
+                    }
+                ]
+            }
+        },
+        "InterpolateExpression": {
+            "type": "typeAlias",
+            "props": {
+                "name": "InterpolateExpression",
+                "description": "",
+                "aliases": [
+                    {
+                        "name": "[\"interpolate\", [\"linear\"]"
+                    },
+                    {
+                        "name": "[\"exponential\", number], [\"zoom\"], ...number[]]"
+                    }
+                ]
+            }
+        },
+        "Point": {
+            "type": "typeAlias",
+            "props": {
+                "name": "Point",
+                "description": "A geographical point [longitude, latitude].",
+                "aliases": [
+                    {
+                        "name": "[number, number]"
+                    },
+                    {
+                        "name": "number[]"
+                    }
+                ]
+            }
+        }
+    }
+}

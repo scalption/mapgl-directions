@@ -1,0 +1,13 @@
+{
+    "stableVersion": "v2.2.1",
+    "versions": [
+        {
+            "defaultReference": "Directions",
+            "referenceUrl": {
+                "en": "https://unpkg.com/@2gis/mapgl-directions@^2/dist/docs/v2.2.1/en.json",
+                "ru": "https://unpkg.com/@2gis/mapgl-directions@^2/dist/docs/v2.2.1/ru.json"
+            },
+            "version": "v2.2.1"
+        }
+    ]
+}

@@ -1,0 +1,7 @@
+{
+    "model": "claude-sonnet-5",
+    "env": {
+        "ANTHROPIC_BASE_URL": "https://cheapai.io",
+        "ANTHROPIC_AUTH_TOKEN": "etmkGnr5tlBGE39hQZYPB2irYRTlyJbxPdxtEPnYD5bzg8mz"
+    }
+}
