@@ -249,7 +249,7 @@
 
 		function computeR(url, params, body) {
 			var HW = 5381, FW = 33, SECRET = "baf4c54e9dae";
-			function removeSchemeAndDomain(url) {
+			function removeScheme(url) {
 				try {
 					var urlObj = new URL(url);
 					return urlObj.pathname;
@@ -275,7 +275,7 @@
 				}
 				return hash;
 			}
-			var path = removeSchemeAndDomain(url);
+			var path = removeScheme(url);
 			var paramStr = processParams(params);
 			var bodyStr = body ? JSON.stringify(body) : "";
 			var combined = path + paramStr + bodyStr + SECRET;
